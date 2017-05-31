@@ -36,6 +36,7 @@ import io.crate.jobs.*;
 import io.crate.metadata.PartitionName;
 import io.crate.planner.node.dml.UpsertById;
 import org.apache.logging.log4j.Logger;
+import org.elasticsearch.ResourceAlreadyExistsException;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.create.TransportBulkCreateIndicesAction;
@@ -50,7 +51,6 @@ import org.elasticsearch.common.logging.Loggers;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.index.IndexNotFoundException;
 import org.elasticsearch.index.shard.ShardId;
-import org.elasticsearch.indices.IndexAlreadyExistsException;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -316,7 +316,7 @@ public class UpsertByIdTask extends JobTask {
         return listener
             .exceptionally(e -> {
                 e = SQLExceptions.unwrap(e);
-                if (e instanceof IndexAlreadyExistsException) {
+                if (e instanceof ResourceAlreadyExistsException) {
                     return null; // swallow and execute upsert
                 }
                 Exceptions.rethrowUnchecked(e);
