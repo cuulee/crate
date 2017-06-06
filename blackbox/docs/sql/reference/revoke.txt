@@ -23,8 +23,7 @@ Description
 on one or many tables, or all tables in a schema from one or many existing existing
 users.
 
-For usage of the ``GRANT`` statement see
-:doc:`/sql/administration/privileges`.
+For usage of the ``REVOKE`` statement see :ref:`administration-privileges`.
 
 Parameters
 ==========

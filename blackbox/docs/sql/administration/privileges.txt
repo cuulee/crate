@@ -1,5 +1,7 @@
-.. _administration_privileges:
+.. highlight:: psql
+.. _administration-privileges:
 
+==========
 Privileges
 ==========
 
@@ -15,7 +17,7 @@ The superuser bypasses all privileges and can access all tables in the cluster.
 
 
 ``GRANT``
----------
+=========
 
 .. hide:
 
@@ -110,7 +112,7 @@ Currently, there is no option to grant privileges on all tables of the cluster.
     tables.
 
 ``REVOKE``
-----------
+==========
 
 To revoke a privilege that was previously granted to a user use the
 :doc:`/sql/reference/revoke` SQL statement, for example::
@@ -143,12 +145,13 @@ that were previously granted to a user, it can be used like this::
 
 
 List Privileges
----------------
+===============
 
 CrateDB exposes table privileges via the read-only
 ``information_schema.table_privileges`` system table.
 
-To list all existing privileges query that table::
+By querying the ``information_schema.table_privileges`` table you can get all
+information regarding the existing privileges. E.g.::
 
     cr> SELECT * FROM information_schema.table_privileges;
     +-------------+-----------+--------------+------------+----------------+
