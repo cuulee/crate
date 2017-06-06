@@ -145,6 +145,7 @@ public class RecoveryTests extends BlobIntegrationTestBase {
             .put(IndexMetaData.SETTING_NUMBER_OF_REPLICAS, 0)
             .put(IndexMetaData.SETTING_NUMBER_OF_SHARDS, 1)
             .build();
+
         blobAdminClient.createBlobTable("test", indexSettings).get();
 
         logger.trace("--> starting [node2] ...");

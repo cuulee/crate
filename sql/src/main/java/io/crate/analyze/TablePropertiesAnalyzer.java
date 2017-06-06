@@ -192,8 +192,8 @@ public final class TablePropertiesAnalyzer {
     protected static class NumberOfReplicasSettingApplier extends SettingsAppliers.AbstractSettingsApplier {
 
         private static final Settings DEFAULT = Settings.builder()
-            .put(TableParameterInfo.NUMBER_OF_REPLICAS, 1)
-            .put(TableParameterInfo.AUTO_EXPAND_REPLICAS, false)
+            .put(TableParameterInfo.NUMBER_OF_REPLICAS, 0)
+            .put(TableParameterInfo.AUTO_EXPAND_REPLICAS, "0-1")
             .build();
 
         public NumberOfReplicasSettingApplier() {

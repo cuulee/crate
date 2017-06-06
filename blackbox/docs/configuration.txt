@@ -60,6 +60,13 @@ For more info about table creating syntax please refer to
 
   Specifies the refresh interval of a shard in milliseconds.
 
+**index.write.wait_for_active_shards**
+  | *Default:* ``all``
+  | *Runtime:* ``yes``
+
+  Specifies the number of active shard copies to check for before proceeding
+  with a write operation.
+
 .. _ref-configuration-blocks:
 
 Blocks

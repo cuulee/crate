@@ -50,6 +50,9 @@ public class CrateTableSettings {
         "all"
     );
 
+    public static final StringSetting SETTING_WAIT_FOR_ACTIVE_SHARDS= new StringSetting(
+        TableParameterInfo.SETTING_WAIT_FOR_ACTIVE_SHARDS, null, "all");
+
     public static final StringSetting RECOVERY_INITIAL_SHARDS = new StringSetting(
         TableParameterInfo.RECOVERY_INITIAL_SHARDS, null, "quorum");
 

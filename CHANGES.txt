@@ -15,6 +15,9 @@ the appropriate section of the docs.
 Breaking Changes
 ================
 
+ - Changed default required shards for index creation and write operations
+   from quorum to ``all``.
+
 Changes
 =======
 
